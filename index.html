@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume | Your Name</title>
+    <style>
+        :root {
+            --primary-color: #2d3436;
+            --accent-color: #0984e3;
+            --text-gray: #636e72;
+            --bg-light: #f5f6fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--primary-color);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 { margin: 0; font-size: 2.5rem; color: var(--primary-color); }
+        .subtitle { color: var(--accent-color); font-weight: bold; font-size: 1.1rem; }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        section { margin-bottom: 30px; }
+        h2 { 
+            text-transform: uppercase; 
+            font-size: 1.2rem; 
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+
+        .job, .edu { margin-bottom: 20px; }
+        .job-title { font-weight: bold; font-size: 1.1rem; display: flex; justify-content: space-between; }
+        .company { color: var(--accent-color); font-style: italic; }
+        .date { color: var(--text-gray); font-size: 0.9rem; }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+
+        .skill-item {
+            background: #eee;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .container { margin: 10px; padding: 20px; }
+            .job-title { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>YOUR NAME</h1>
+        <div class="subtitle">Full Stack Developer | UI/UX Enthusiast</div>
+        <div class="contact-info">
+            <span>📧 email@example.com</span>
+            <span>📱 +1 234 567 890</span>
+            <span>📍 City, Country</span>
+            <span>🔗 linkedin.com/in/yourprofile</span>
+        </div>
+    </header>
+
+    <section>
+        <h2>Professional Summary</h2>
+        <p>Results-driven professional with 5+ years of experience in building scalable web applications. Passionate about solving complex problems and collaborating with cross-functional teams to deliver high-quality digital products.</p>
+    </section>
+
+    <section>
+        <h2>Experience</h2>
+        <div class="job">
+            <div class="job-title">
+                <span>Senior Software Engineer</span>
+                <span class="date">2021 – Present</span>
+            </div>
+            <div class="company">Tech Innovators Inc.</div>
+            <ul>
+                <li>Led a team of 5 developers to rebuild the core customer dashboard, increasing load speeds by 40%.</li>
+                <li>Implemented automated testing workflows, reducing production bugs by 25%.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-title">
+                <span>Junior Web Developer</span>
+                <span class="date">2018 – 2021</span>
+            </div>
+            <div class="company">Creative Solutions Agency</div>
+            <ul>
+                <li>Developed responsive WordPress themes and custom plugins for over 20+ clients.</li>
+                <li>Collaborated with design teams to translate Figma wireframes into functional code.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">JavaScript (ES6+)</div>
+            <div class="skill-item">React / Vue.js</div>
+            <div class="skill-item">Node.js</div>
+            <div class="skill-item">HTML5 & CSS3</div>
+            <div class="skill-item">Python / Django</div>
+            <div class="skill-item">PostgreSQL</div>
+            <div class="skill-item">Git / GitHub</div>
+            <div class="skill-item">AWS</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        <div class="edu">
+            <div class="job-title">
+                <span>B.Sc. in Computer Science</span>
+                <span class="date">Graduated 2018</span>
+            </div>
+            <div class="company">University of Technology</div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
