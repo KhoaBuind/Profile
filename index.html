@@ -3,154 +3,336 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Resume | Your Name</title>
+    <title>Profile | Bui Nguyen Dang Khoa</title>
     <style>
         :root {
-            --primary-color: #2d3436;
-            --accent-color: #0984e3;
-            --text-gray: #636e72;
-            --bg-light: #f5f6fa;
+            --primary-bg: #2c3e50;
+            --sidebar-bg: #f8f9fa;
+            --accent-color: #2980b9;
+            --text-main: #333;
+            --text-light: #666;
+            --white: #ffffff;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--primary-color);
-            background-color: var(--bg-light);
             margin: 0;
-            padding: 0;
+            background-color: #e9ecef;
+            color: var(--text-main);
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 900px;
-            margin: 40px auto;
-            background: #fff;
-            padding: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
-
-        header {
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-
-        h1 { margin: 0; font-size: 2.5rem; color: var(--primary-color); }
-        .subtitle { color: var(--accent-color); font-weight: bold; font-size: 1.1rem; }
-        
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 10px;
-            font-size: 0.9rem;
-        }
-
-        section { margin-bottom: 30px; }
-        h2 { 
-            text-transform: uppercase; 
-            font-size: 1.2rem; 
-            border-left: 4px solid var(--accent-color);
-            padding-left: 10px;
-            margin-bottom: 15px;
-        }
-
-        .job, .edu { margin-bottom: 20px; }
-        .job-title { font-weight: bold; font-size: 1.1rem; display: flex; justify-content: space-between; }
-        .company { color: var(--accent-color); font-style: italic; }
-        .date { color: var(--text-gray); font-size: 0.9rem; }
-
-        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 10px;
+            grid-template-columns: 300px 1fr;
+            max-width: 1200px;
+            margin: 40px auto;
+            background: var(--white);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
 
-        .skill-item {
-            background: #eee;
-            padding: 5px 12px;
+        /* Sidebar Styling */
+        .sidebar {
+            background-color: var(--primary-bg);
+            color: var(--white);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .profile-title {
+            color: #bdc3c7;
+            font-size: 16px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .contact-item {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            word-break: break-all;
+        }
+
+        .section-title-side {
+            border-bottom: 1px solid #7f8c8d;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skill-tag {
+            background: rgba(255,255,255,0.1);
+            padding: 5px 10px;
+            margin-bottom: 5px;
             border-radius: 4px;
-            font-size: 0.9rem;
-            text-align: center;
+            display: inline-block;
+            font-size: 13px;
         }
 
-        @media (max-width: 600px) {
-            .container { margin: 10px; padding: 20px; }
-            .job-title { flex-direction: column; }
+        /* Main Content Styling */
+        .main-content {
+            padding: 40px;
+        }
+
+        .section-title {
+            color: var(--primary-bg);
+            font-size: 20px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .summary-list li {
+            margin-bottom: 8px;
+        }
+
+        /* Experience Timeline */
+        .job-card {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .job-role {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .job-company {
+            font-weight: bold;
+            color: var(--text-main);
+        }
+
+        .job-date {
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .job-details ul {
+            padding-left: 20px;
+            color: var(--text-main);
+        }
+
+        /* Projects Section */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .tech-stack {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; margin: 0; }
+            .job-header { flex-direction: column; }
+            .sidebar { padding: 20px; }
+            .main-content { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <header>
-        <h1>YOUR NAME</h1>
-        <div class="subtitle">Full Stack Developer | UI/UX Enthusiast</div>
+    <aside class="sidebar">
+        <div class="profile-name">Bui Nguyen Dang Khoa</div>
+        <div class="profile-title">Senior Developer</div>
+
         <div class="contact-info">
-            <span>📧 email@example.com</span>
-            <span>📱 +1 234 567 890</span>
-            <span>📍 City, Country</span>
-            <span>🔗 linkedin.com/in/yourprofile</span>
+            <div class="contact-item">📅 22/06/1993</div>
+            <div class="contact-item">📧 khoa.bui.nd@gmail.com</div>
+            <div class="contact-item">📞 0767050215</div>
+            <div class="contact-item">📍 Binh Tan District, HCMC</div>
         </div>
-    </header>
 
-    <section>
-        <h2>Professional Summary</h2>
-        <p>Results-driven professional with 5+ years of experience in building scalable web applications. Passionate about solving complex problems and collaborating with cross-functional teams to deliver high-quality digital products.</p>
-    </section>
+        <div class="section-title-side">Education</div>
+        <div style="font-size: 14px; margin-bottom: 20px;">
+            <strong>American Polytechnic College (VATC)</strong><br>
+            Science in Information Technology<br>
+            <span style="color: #bdc3c7; font-size: 12px;">2011 – 2014</span>
+        </div>
 
-    <section>
-        <h2>Experience</h2>
-        <div class="job">
-            <div class="job-title">
-                <span>Senior Software Engineer</span>
-                <span class="date">2021 – Present</span>
-            </div>
-            <div class="company">Tech Innovators Inc.</div>
-            <ul>
-                <li>Led a team of 5 developers to rebuild the core customer dashboard, increasing load speeds by 40%.</li>
-                <li>Implemented automated testing workflows, reducing production bugs by 25%.</li>
+        <div class="section-title-side">Core Skills</div>
+        <div>
+            <span class="skill-tag">PHP (Laravel, Phalcon)</span>
+            <span class="skill-tag">RESTful API</span>
+            <span class="skill-tag">MySQL & Redis</span>
+            <span class="skill-tag">AWS (EC2, S3, RDS)</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Data Structures</span>
+            <span class="skill-tag">Kafka</span>
+        </div>
+        
+        <br>
+        <div class="section-title-side">Tools</div>
+        <div>
+            <span class="skill-tag">Git / SourceTree</span>
+            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">Postman</span>
+            <span class="skill-tag">PhpStorm</span>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <section>
+            <h2 class="section-title">Professional Summary</h2>
+            <ul class="summary-list">
+                [cite_start]<li>8+ years of experience in software development[cite: 9].</li>
+                [cite_start]<li>Strong analytical and creative problem-solving skills with solid understanding of algorithms and data structures[cite: 11, 12].</li>
+                [cite_start]<li>Proficient in researching new technologies and working under pressure to meet tight deadlines[cite: 10, 14].</li>
+                [cite_start]<li>Expert in REST API, web render server-side using PHP languages[cite: 19].</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="job">
-            <div class="job-title">
-                <span>Junior Web Developer</span>
-                <span class="date">2018 – 2021</span>
+        <section>
+            <h2 class="section-title">Work Experience</h2>
+
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <div class="job-role">Senior Developer</div>
+                        <div class="job-company">Hasaki</div>
+                    </div>
+                    <div class="job-date">Mar 2025 – Current</div>
+                </div>
+                <div class="job-details">
+                    <ul>
+                        [cite_start]<li>Designed and developed backend architecture for the Hasaki merchant platform[cite: 17].</li>
+                        [cite_start]<li>Developed POSM schedule system and PG scheduling management[cite: 17].</li>
+                        [cite_start]<li>Built product synchronization system with automated email alerts for low stock[cite: 17].</li>
+                        [cite_start]<li>Built promotion program management module for merchants[cite: 17].</li>
+                    </ul>
+                </div>
             </div>
-            <div class="company">Creative Solutions Agency</div>
-            <ul>
-                <li>Developed responsive WordPress themes and custom plugins for over 20+ clients.</li>
-                <li>Collaborated with design teams to translate Figma wireframes into functional code.</li>
-            </ul>
-        </div>
-    </section>
 
-    <section>
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-item">JavaScript (ES6+)</div>
-            <div class="skill-item">React / Vue.js</div>
-            <div class="skill-item">Node.js</div>
-            <div class="skill-item">HTML5 & CSS3</div>
-            <div class="skill-item">Python / Django</div>
-            <div class="skill-item">PostgreSQL</div>
-            <div class="skill-item">Git / GitHub</div>
-            <div class="skill-item">AWS</div>
-        </div>
-    </section>
-
-    <section>
-        <h2>Education</h2>
-        <div class="edu">
-            <div class="job-title">
-                <span>B.Sc. in Computer Science</span>
-                <span class="date">Graduated 2018</span>
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <div class="job-role">Senior Developer</div>
+                        <div class="job-company">Firegroup</div>
+                    </div>
+                    <div class="job-date">Aug 2024 – Feb 2025</div>
+                </div>
+                <div class="job-details">
+                    <ul>
+                        [cite_start]<li>Developed backend services for Zopi multi-channel dropshipping app using Laravel[cite: 17].</li>
+                        [cite_start]<li>Built integrations with Shopify, TikTok Shop, and WooCommerce[cite: 17].</li>
+                        [cite_start]<li>Implemented AI-powered product trend prediction using Marqo[cite: 17].</li>
+                        [cite_start]<li>Set up and maintained server infrastructure and deployment pipelines[cite: 17].</li>
+                    </ul>
+                </div>
             </div>
-            <div class="company">University of Technology</div>
-        </div>
-    </section>
+
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <div class="job-role">Senior Developer</div>
+                        <div class="job-company">Brickmate</div>
+                    </div>
+                    <div class="job-date">Aug 2020 – Aug 2023</div>
+                </div>
+                <div class="job-details">
+                    <ul>
+                        [cite_start]<li>Led a team of developers; defined architecture and database schema[cite: 17].</li>
+                        [cite_start]<li>Setup CI/CD build system for all projects[cite: 18].</li>
+                        [cite_start]<li>Managed team members, estimated user stories, and communicated with Product Owners[cite: 19].</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <div class="job-role">Senior Developer</div>
+                        <div class="job-company">VHT</div>
+                    </div>
+                    <div class="job-date">May 2018 – July 2020</div>
+                </div>
+                <div class="job-details">
+                    <ul>
+                        [cite_start]<li>Maintained old applications and developed new features[cite: 19].</li>
+                        [cite_start]<li>Managed team members, performed code reviews, and supported training for new members[cite: 19].</li>
+                    </ul>
+                </div>
+            </div>
+            
+             <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <div class="job-role">Developer</div>
+                        <div class="job-company">Teamcrop / Hotdeal / Lazada</div>
+                    </div>
+                    <div class="job-date">2015 – 2018</div>
+                </div>
+                <div class="job-details">
+                    <ul>
+                        [cite_start]<li><strong>Teamcrop:</strong> Developed application defects and improved performance[cite: 19].</li>
+                        [cite_start]<li><strong>Hotdeal:</strong> Built system tools to manage campaigns[cite: 19].</li>
+                        [cite_start]<li><strong>Lazada:</strong> Supported merchants using API Seller Center to sync data[cite: 19].</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h2 class="section-title">Key Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <strong>HASAKI MERCHANT SYSTEM</strong>
+                    <p>A merchant management platform designed to streamline POSM scheduling, inventory sync, and promotions.
+                    [cite_start][cite: 28]</p>
+                    <div class="tech-stack">Tech: PHP (Phalcon), Redis, Kafka, Docker, Nginx</div>
+                </div>
+
+                <div class="project-card">
+                    <strong>ZOPI OMNI DROPSHIP</strong>
+                    <p>Designed backend architecture supporting multiple e-commerce platforms (Shopify, TikTok Shop) with AI trend prediction.
+                    [cite_start][cite: 28]</p>
+                    <div class="tech-stack">Tech: Laravel, MySQL, Marqo, AWS (EC2, S3, RDS), Docker</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
 </div>
 
 </body>
